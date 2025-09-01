@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вход • FinalChat</title>
+  <link rel="stylesheet" href="/styles.css">
+  
+</head>
+<body>
+  <div class="header">
+    <div class="brand"><div class="dot"></div><strong>FinalChat</strong></div>
+    <div class="muted">Express + MySQL + JWT</div>
+  </div>
+  <div class="container center">
+    <div class="card" style="max-width:720px; width:100%">
+      <h1>Добро пожаловать</h1>
+      <p class="muted">Зарегистрируйся или войди, чтобы перейти в чат.</p>
+      <div class="row" style="margin-top:16px">
+        <div>
+          <h2>Регистрация</h2>
+          <label>Логин</label>
+          <input id="regLogin" placeholder="минимум 3 символа" />
+          <label style="margin-top:10px">Пароль</label>
+          <input id="regPass" type="password" placeholder="минимум 6 символов" />
+          <button class "btn" id="btnRegister" type="button" style="margin-top:12px">Создать аккаунт</button>
+          <div id="regMsg" class="note"></div>
+        </div>
+        <div>
+          <h2>Вход</h2>
+          <label>Логин</label>
+          <input id="logLogin" placeholder="ваш логин" />
+          <label style="margin-top:10px">Пароль</label>
+          <input id="logPass" type="password" placeholder="ваш пароль" />
+          <div class="actions" style="margin-top:12px">
+            <button id="btnLogin" type="button">Войти</button>
+            <a class="ghost" href="chat.html" style="display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid var(--ring); margin-left:8px">Гостевой режим</a>
+          </div>
+          <div id="logMsg" class="note"></div>
+        </div>
+      </div>
+      <hr/>
+      <div class="muted">После входа откроется <a href="chat.html">чат</a>.</div>
+    </div>
+  </div>
+  <script>window.API_BASE = window.API_BASE || "";</script>
+  <script type="module" src="/login.js"></script>
+</body>
+</html>
