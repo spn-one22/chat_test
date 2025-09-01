@@ -13,7 +13,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-8-orange?style=for-the-badge&logo=mysql)
 ![Docker](https://img.shields.io/badge/Docker-Compose-blue?style=for-the-badge&logo=docker)
 
-<b>CHAT_TEST</b> - это пробный проект для локального развертывания на Docker для того чтобы протестировать API а также для создания  тест планов для нагрузочного тестирования на JMeter 
+<b>CHAT_TEST</b> - это пробный проект для локального развертывания на Docker для того чтобы протестировать API а также для создания и отработки тест планов по нагрузочному тестированию на JMeter.
 
 _____________________________
 
