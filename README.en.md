@@ -36,7 +36,7 @@ docker compose up -d --build
 - MYSQL_* — database config
 - JWT_SECRET — secret for tokens
 
-######Open in browser: [http://localhost:8090](http://localhost:8090)
+###### Open in browser: [http://localhost:8090](http://localhost:8090)
 
 endpoints:
 
