@@ -26,7 +26,7 @@
 ### Steps
 ```bash
 git clone https://github.com/<your_name>/finalchat.git
-cd finalchat
+cd chat_test
 cp .env.example .env
 docker compose up -d --build
 ```
