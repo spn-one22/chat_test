@@ -26,7 +26,7 @@ _____________________________
 ### Шаги запуска
 ```bash
 git clone https://github.com/spn_one22/chat_test.git
-cd finalchat
+cd chat_test
 cp .env.example .env
 docker compose up -d --build
 ```
