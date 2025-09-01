@@ -146,7 +146,15 @@
         <hashTree/>
         <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller"/>
         <hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/LoginFlow"/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/LoginFlow">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-729011297">Test Plan General</stringProp>
+              <stringProp name="-729011297">Test Plan General</stringProp>
+              <stringProp name="1241115058">Controllers Library</stringProp>
+              <stringProp name="-1382807225">Simple Controller : Common</stringProp>
+              <stringProp name="-1773187035">Simple Controller : LoginFlow </stringProp>
+            </collectionProp>
+          </ModuleController>
           <hashTree/>
         </hashTree>
         <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller : 70% Users (Post)">
@@ -167,7 +175,15 @@
               <boolProp name="TransactionController.includeTimers">false</boolProp>
             </TransactionController>
             <hashTree>
-              <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/ReadFeed"/>
+              <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/ReadFeed">
+                <collectionProp name="ModuleController.node_path">
+                  <stringProp name="-729011297">Test Plan General</stringProp>
+                  <stringProp name="-729011297">Test Plan General</stringProp>
+                  <stringProp name="1241115058">Controllers Library</stringProp>
+                  <stringProp name="-1382807225">Simple Controller : Common</stringProp>
+                  <stringProp name="-1998688080">Simple Controller : ReadFeed</stringProp>
+                </collectionProp>
+              </ModuleController>
               <hashTree/>
             </hashTree>
           </hashTree>
@@ -175,7 +191,15 @@
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/PostMessage"/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/PostMessage">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="1241115058">Controllers Library</stringProp>
+                <stringProp name="-1382807225">Simple Controller : Common</stringProp>
+                <stringProp name="1420584299">Simple Controller : PostMessage</stringProp>
+              </collectionProp>
+            </ModuleController>
             <hashTree/>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller : 30% Users write one more">
@@ -184,7 +208,15 @@
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
-            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/PostMessage"/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/PostMessage">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="1241115058">Controllers Library</stringProp>
+                <stringProp name="-1382807225">Simple Controller : Common</stringProp>
+                <stringProp name="1420584299">Simple Controller : PostMessage</stringProp>
+              </collectionProp>
+            </ModuleController>
             <hashTree/>
           </hashTree>
         </hashTree>
@@ -201,13 +233,29 @@
         <hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : Edit Own Messages"/>
           <hashTree>
-            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/PostMessage"/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/PostMessage">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="1241115058">Controllers Library</stringProp>
+                <stringProp name="-1382807225">Simple Controller : Common</stringProp>
+                <stringProp name="1420584299">Simple Controller : PostMessage</stringProp>
+              </collectionProp>
+            </ModuleController>
             <hashTree/>
             <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller : TX_EditOwn">
               <boolProp name="TransactionController.includeTimers">false</boolProp>
             </TransactionController>
             <hashTree>
-              <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/EditMessage"/>
+              <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/EditMessage">
+                <collectionProp name="ModuleController.node_path">
+                  <stringProp name="-729011297">Test Plan General</stringProp>
+                  <stringProp name="-729011297">Test Plan General</stringProp>
+                  <stringProp name="1241115058">Controllers Library</stringProp>
+                  <stringProp name="-1382807225">Simple Controller : Common</stringProp>
+                  <stringProp name="-1003942233">Simple Controller : EditOwnMessage</stringProp>
+                </collectionProp>
+              </ModuleController>
               <hashTree/>
             </hashTree>
           </hashTree>
@@ -236,15 +284,39 @@
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Admin/Admin/ListMessages"/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Admin/ListMessages">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="1241115058">Controllers Library</stringProp>
+                <stringProp name="-878065549">Simple Controller : Admin</stringProp>
+                <stringProp name="-1531084186">Simple Controller : ListMessages</stringProp>
+              </collectionProp>
+            </ModuleController>
             <hashTree/>
-            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Admin/EditAnyMessage"/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Admin/EditAnyMessage">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="1241115058">Controllers Library</stringProp>
+                <stringProp name="-878065549">Simple Controller : Admin</stringProp>
+                <stringProp name="-1469454975">Simple Controller : EditAnyMessage</stringProp>
+              </collectionProp>
+            </ModuleController>
             <hashTree/>
-            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Admin/DeleteAnyMessage"/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Admin/DeleteAnyMessage">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="-729011297">Test Plan General</stringProp>
+                <stringProp name="1241115058">Controllers Library</stringProp>
+                <stringProp name="-878065549">Simple Controller : Admin</stringProp>
+                <stringProp name="2137080034">Simple Controller : DeleteAnyMessage</stringProp>
+              </collectionProp>
+            </ModuleController>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <RunTime guiclass="RunTimeGui" testclass="RunTime" testname="Runtime Controller ??????????????">
+        <RunTime guiclass="RunTimeGui" testclass="RunTime" testname="Runtime Controller ??????????????" enabled="false">
           <stringProp name="RunTime.seconds">1</stringProp>
         </RunTime>
         <hashTree/>
@@ -262,7 +334,15 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/PostMessage"/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/PostMessage">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-729011297">Test Plan General</stringProp>
+            <stringProp name="-729011297">Test Plan General</stringProp>
+            <stringProp name="1241115058">Controllers Library</stringProp>
+            <stringProp name="-1382807225">Simple Controller : Common</stringProp>
+            <stringProp name="1420584299">Simple Controller : PostMessage</stringProp>
+          </collectionProp>
+        </ModuleController>
         <hashTree/>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Controllers Library" enabled="false"/>
@@ -271,64 +351,29 @@
         <hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : LoginFlow "/>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : CSRF">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : login">
               <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
               <stringProp name="HTTPSampler.port">8090</stringProp>
-              <stringProp name="HTTPSampler.path">/login</stringProp>
+              <stringProp name="HTTPSampler.path">/api/auth/login</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments"/>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+	&quot;login&quot;:&quot;${login}&quot;,&#xd;
+	&quot;password&quot;:&quot;${password}&quot;&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor : csrfToken">
-                <stringProp name="JSONPostProcessor.referenceNames"></stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs"></stringProp>
-                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
-              </JSONPostProcessor>
-              <hashTree/>
-              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor">
-                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-                <stringProp name="RegexExtractor.refname"></stringProp>
-                <stringProp name="RegexExtractor.regex"></stringProp>
-                <stringProp name="RegexExtractor.template"></stringProp>
-                <stringProp name="RegexExtractor.default"></stringProp>
-                <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
-                <stringProp name="RegexExtractor.match_number"></stringProp>
-              </RegexExtractor>
-              <hashTree/>
-            </hashTree>
-            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller : TX_Login">
-              <boolProp name="TransactionController.includeTimers">false</boolProp>
-            </TransactionController>
-            <hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : Log in">
-                <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
-                <stringProp name="HTTPSampler.port">8090</stringProp>
-                <stringProp name="HTTPSampler.path">/login</stringProp>
-                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-                <stringProp name="HTTPSampler.method">POST</stringProp>
-                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                  <collectionProp name="Arguments.arguments">
-                    <elementProp name="" elementType="HTTPArgument">
-                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">{&#xd;
-	&quot;username&quot;:&quot;${username}&quot;,&#xd;
-	&quot;password&quot;:&quot;${password}&quot;,&#xd;
-	&quot;_csrf&quot;:&quot;${csrfToken}&quot;&#xd;
-	}</stringProp>
-                      <stringProp name="Argument.metadata">=</stringProp>
-                    </elementProp>
-                  </collectionProp>
-                </elementProp>
-              </HTTPSamplerProxy>
-              <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion [200 - OK]">
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
                 <collectionProp name="Asserion.test_strings">
                   <stringProp name="49586">200</stringProp>
                 </collectionProp>
@@ -338,38 +383,37 @@
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
               <hashTree/>
-              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion">
-                <stringProp name="JSON_PATH">$.ok</stringProp>
-                <stringProp name="EXPECTED_VALUE">true</stringProp>
-                <boolProp name="JSONVALIDATION">true</boolProp>
-                <boolProp name="EXPECT_NULL">false</boolProp>
-                <boolProp name="INVERT">false</boolProp>
-                <boolProp name="ISREGEX">true</boolProp>
-              </JSONPathAssertion>
-              <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor">
-                <stringProp name="JSONPostProcessor.referenceNames"></stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs"></stringProp>
-                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
-              </JSONPostProcessor>
-              <hashTree/>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Authorization" elementType="Header">
-                    <stringProp name="Header.name">Authorization</stringProp>
-                    <stringProp name="Header.value">Bearer ${authToken}</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
             </hashTree>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor : jwt">
+              <stringProp name="JSONPostProcessor.referenceNames">jwt</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.token</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor : userRole">
+              <stringProp name="JSONPostProcessor.referenceNames">userRole</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.role</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${jwt}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : ReadFeed"/>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : ReadFeed">
               <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
               <stringProp name="HTTPSampler.port">8090</stringProp>
-              <stringProp name="HTTPSampler.path">/api/chat/messages</stringProp>
+              <stringProp name="HTTPSampler.path">/api/messages </stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <stringProp name="HTTPSampler.method">GET</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -390,9 +434,18 @@
             </ResponseAssertion>
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion">
-              <stringProp name="JSON_PATH">$.messages[*]</stringProp>
+              <stringProp name="JSON_PATH">$.data[*]</stringProp>
               <stringProp name="EXPECTED_VALUE"></stringProp>
               <boolProp name="JSONVALIDATION">false</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion">
+              <stringProp name="JSON_PATH">$.ok</stringProp>
+              <stringProp name="EXPECTED_VALUE">true</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
               <boolProp name="ISREGEX">true</boolProp>
@@ -404,7 +457,7 @@
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : PostMessage">
               <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
               <stringProp name="HTTPSampler.port">8090</stringProp>
-              <stringProp name="HTTPSampler.path">/api/chat/messages</stringProp>
+              <stringProp name="HTTPSampler.path">/api/messages</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -433,7 +486,16 @@
             </ResponseAssertion>
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion">
-              <stringProp name="JSON_PATH">$.id</stringProp>
+              <stringProp name="JSON_PATH">$.ok</stringProp>
+              <stringProp name="EXPECTED_VALUE">true</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion">
+              <stringProp name="JSON_PATH">$.data.id</stringProp>
               <stringProp name="EXPECTED_VALUE"></stringProp>
               <boolProp name="JSONVALIDATION">false</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
@@ -443,9 +505,18 @@
             <hashTree/>
             <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor">
               <stringProp name="JSONPostProcessor.referenceNames">LastMessageId</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.id</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.id</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
             </JSONPostProcessor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${jwt}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
             <hashTree/>
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : EditOwnMessage"/>
@@ -471,7 +542,7 @@
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion [200 - OK]">
               <collectionProp name="Asserion.test_strings">
                 <stringProp name="49586">200</stringProp>
               </collectionProp>
@@ -481,16 +552,34 @@
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
             <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion">
+              <stringProp name="JSON_PATH">$.ok</stringProp>
+              <stringProp name="EXPECTED_VALUE">true</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${jwt}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
           </hashTree>
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : Admin"/>
         <hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : ListMessages"/>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : ListMessages">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : ListMessages [GET]">
               <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
               <stringProp name="HTTPSampler.port">8090</stringProp>
-              <stringProp name="HTTPSampler.path">/api/chat/messages</stringProp>
+              <stringProp name="HTTPSampler.path">/api/messages</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <stringProp name="HTTPSampler.method">GET</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -500,37 +589,7 @@
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor">
-              <stringProp name="JSONPostProcessor.referenceNames">AnyMessageId</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.messages[0].id</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
-            </JSONPostProcessor>
-            <hashTree/>
-          </hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : EditAnyMessage"/>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : EditAnyMessage">
-              <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
-              <stringProp name="HTTPSampler.port">8090</stringProp>
-              <stringProp name="HTTPSampler.path">/api/chat/messages/${anyMessageId}</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">PATCH</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.value">{&#xd;
-	&quot;text&quot;:&quot;[moderated]&quot;&#xd;
-}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion [200 - OK]">
               <collectionProp name="Asserion.test_strings">
                 <stringProp name="49586">200</stringProp>
               </collectionProp>
@@ -540,13 +599,98 @@
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
             <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion">
+              <stringProp name="JSON_PATH">$.ok</stringProp>
+              <stringProp name="EXPECTED_VALUE">true</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">false</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${jwt}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor">
+              <stringProp name="JSONPostProcessor.referenceNames">anyMessageId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data[0].id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : EditAnyMessage"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : EditAnyMessage [PATCH]">
+              <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
+              <stringProp name="HTTPSampler.port">8090</stringProp>
+              <stringProp name="HTTPSampler.path">/api/admin/messages/${anyMessageId}</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">PATCH</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+	&quot;text&quot;:&quot;[moderated] ${__RandomString(6,abcdef)}&quot;&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${jwt}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion [200 - OK]">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion">
+              <stringProp name="JSON_PATH">$.data.id</stringProp>
+              <stringProp name="EXPECTED_VALUE"></stringProp>
+              <boolProp name="JSONVALIDATION">false</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion">
+              <stringProp name="JSON_PATH">$.ok</stringProp>
+              <stringProp name="EXPECTED_VALUE"></stringProp>
+              <boolProp name="JSONVALIDATION">false</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : DeleteAnyMessage"/>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : DeleteAnyMessage">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : DeleteAnyMessage [DELETE]">
               <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
               <stringProp name="HTTPSampler.port">8090</stringProp>
-              <stringProp name="HTTPSampler.path">/api/chat/messages/${anyMessageId}</stringProp>
+              <stringProp name="HTTPSampler.path">/api/admin/messages/${anyMessageId}</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <stringProp name="HTTPSampler.method">DELETE</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -555,6 +699,25 @@
                 <collectionProp name="Arguments.arguments"/>
               </elementProp>
             </HTTPSamplerProxy>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${jwt}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49590">204</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
             <hashTree/>
           </hashTree>
         </hashTree>
