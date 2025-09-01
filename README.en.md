@@ -38,8 +38,6 @@ docker compose up -d --build
 
 ###### Open in browser: [http://localhost:8090](http://localhost:8090)
 
-endpoints:
-
 - `index.html` → register / login  
 - `chat.html` → chat  
 - `admin.html` → admin panel  
