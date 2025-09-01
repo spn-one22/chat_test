@@ -39,8 +39,6 @@ docker compose up -d --build
 
 ###### Открыть в браузере: [http://localhost:8090](http://localhost:8090)
 
-эндпоинты:
-
 - `index.html` → регистрация / вход  
 - `chat.html` → чат  
 - `admin.html` → админка  
