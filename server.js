@@ -167,6 +167,7 @@ app.patch("/api/messages/:id", auth, async (req, res) => {
   const id = Number(req.params.id);
   const text = (req.body?.text || "").toString().trim();
   if (!id || !text) return res.status(400).json({ ok:false, message:"id and text required" });
+
   try {
     const [rows] = await pool.query("SELECT userId FROM messages WHERE id = ?", [id]);
     const msg = Array.isArray(rows) && rows[0];
@@ -174,13 +175,18 @@ app.patch("/api/messages/:id", auth, async (req, res) => {
 
     const u = await getUserById(req.user.id);
     const isOwner = msg.userId === req.user.id;
-    const isAdmin = u && u.role === 'admin';
+    const isAdmin = u && u.role === "admin";
     if (!isOwner && !isAdmin) return res.status(403).json({ ok:false, message:"forbidden" });
     if (isOwner && u && u.banned) return res.status(403).json({ ok:false, message:"banned" });
 
-    await pool.query("UPDATE messages SET text = ? WHERE id = ?", [text, id]);
+    // берём имя пользователя (подстрой под то, как у тебя хранится)
+    //const editorName = u?.name || u?.username || `user_${u?.id}`;
+    const editorName = u.login;
+    const newText = `${text} [edited by ${editorName}]`;
+
+    await pool.query("UPDATE messages SET text = ? WHERE id = ?", [newText, id]);
     return res.json({ ok:true });
-  } catch(e) {
+  } catch (e) {
     console.error(e);
     return res.status(500).json({ ok:false, message:"server error" });
   }
