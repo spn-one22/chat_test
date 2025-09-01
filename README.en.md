@@ -13,7 +13,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-8-orange?style=for-the-badge&logo=mysql)
 ![Docker](https://img.shields.io/badge/Docker-Compose-blue?style=for-the-badge&logo=docker)
 
-<b>CHAT_TEST</b> - This is a trial project for local deployment on Docker in order to test the API as well as to create test plans for load testing on JMeter.
+<b>CHAT_TEST</b> - This is a trial project for local deployment on Docker in order to test the API, as well as to create and refine test plans for load testing on JMeter.
 
 ---
 
