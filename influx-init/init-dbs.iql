@@ -1,0 +1,6 @@
+CREATE DATABASE chat_test_jmeter;
+CREATE DATABASE chat_test_telegraf;
+CREATE USER jmeter_user WITH PASSWORD 'jmeter_pass';
+GRANT ALL ON chat_test_jmeter TO jmeter_user;
+CREATE USER telegraf_user WITH PASSWORD 'telegraf_pass';
+GRANT ALL ON chat_test_telegraf TO telegraf_user;
