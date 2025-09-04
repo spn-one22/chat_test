@@ -1,9 +1,10 @@
 version: "3.9"
 
 services:
+  # --- Мессенджер (основное приложение)
   app:
     build: .
-    container_name: finalchat-app
+    container_name: CHAT_TEST-APP
     env_file: .env
     ports:
       - "8090:8080"
@@ -14,9 +15,10 @@ services:
     networks:
       - web
 
+  # --- База данных MySQL
   mysql:
     image: mysql:8.0
-    container_name: finalchat-mysql-db
+    container_name: CHAT_TEST-mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -26,7 +28,7 @@ services:
       - mysql_data:/var/lib/mysql
       - ./mysql-init:/docker-entrypoint-initdb.d:ro
     ports:
-      - "3307:3306"   # 👈 внешний 3307 → внутренний 3306
+      - "3307:3306"   # внешний порт 3307 → внутренний 3306
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h localhost -u${MYSQL_USER} -p${MYSQL_PASSWORD} --silent"]
       interval: 5s
@@ -36,8 +38,66 @@ services:
     networks:
       - web
 
+  # --- telegraf агент для сбора системных метрик
+  telegraf:
+    image: telegraf:1.35
+    container_name: CHAT_TEST-telegraf
+    restart: unless-stopped
+    depends_on:
+      - influxdb
+    environment:
+      - HOSTNAME=telegraf-chat
+    volumes:
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro   # метрики контейнеров
+    networks:
+      - web
+
+  # --- InfluxDB для хранения метрик JMeter + telegraf
+  influxdb:
+    image: influxdb:1.8
+    container_name: CHAT_TEST-influxdb
+    restart: unless-stopped
+    environment:
+      INFLUXDB_HTTP_AUTH_ENABLED: "true"
+      INFLUXDB_ADMIN_USER: admin
+      INFLUXDB_ADMIN_PASSWORD: admin
+    ports:
+      - "8086:8086"      # API для записи метрик и доступа Grafana
+    volumes:
+      - ./influx-init:/docker-entrypoint-initdb.d:ro
+      - influxdb_data:/var/lib/influxdb
+    networks:
+      - web
+
+  # --- Grafana для визуализации данных
+  grafana:
+    image: grafana/grafana:latest
+    container_name: CHAT_TEST-grafana
+    restart: unless-stopped
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_DEFAULT_THEME: dark
+    ports:
+      - "3000:3000"      # Веб-интерфейс Grafana
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - influxdb
+    networks:
+      - web
+
+
+# --- Общие тома
 volumes:
   mysql_data:
+  influxdb_data:
+  grafana_data:
 
+# --- Общая сеть
 networks:
   web: {}
+
+
+ 
