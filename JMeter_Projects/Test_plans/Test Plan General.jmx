@@ -103,7 +103,7 @@
         <boolProp name="CacheManager.controlledByThread">false</boolProp>
       </CacheManager>
       <hashTree/>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - Stepping Thread Group">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - Stepping Thread Group" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">600</stringProp>
         <stringProp name="Threads initial delay">5</stringProp>
@@ -121,16 +121,16 @@
       </kg.apc.jmeter.threads.SteppingThreadGroup>
       <hashTree>
         <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer">
-          <stringProp name="ConstantTimer.delay">600</stringProp>
+          <stringProp name="ConstantTimer.delay">1600</stringProp>
           <stringProp name="RandomTimer.range">150</stringProp>
         </GaussianRandomTimer>
         <hashTree/>
         <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller : Login as user"/>
         <hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/LoginFlow" enabled="true">
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/LoginFlow">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="-729011297">Test Plan General</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
               <stringProp name="1241115058">Controllers Library</stringProp>
               <stringProp name="-1382807225">Simple Controller : Common</stringProp>
               <stringProp name="-1773187035">Simple Controller : LoginFlow </stringProp>
@@ -140,7 +140,7 @@
         </hashTree>
         <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller : Login as admin"/>
         <hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Admin/LoginFlow">
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Admin/LoginFlow" enabled="true">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
               <stringProp name="-729011297">Test Plan General</stringProp>
@@ -151,7 +151,7 @@
           </ModuleController>
           <hashTree/>
         </hashTree>
-        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller : 80% Users (Post)">
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller : 80% Users (Post)" enabled="true">
           <intProp name="ThroughputController.style">1</intProp>
           <boolProp name="ThroughputController.perThread">false</boolProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
@@ -214,7 +214,7 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller : 20% Users (Post + Edit)">
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller : 20% Users (Post + Edit)" enabled="true">
           <intProp name="ThroughputController.style">1</intProp>
           <boolProp name="ThroughputController.perThread">false</boolProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
@@ -255,7 +255,7 @@
             </hashTree>
           </hashTree>
         </hashTree>
-        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller : 100% (all users)">
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller : 100% (all users)" enabled="true">
           <intProp name="ThroughputController.style">1</intProp>
           <boolProp name="ThroughputController.perThread">false</boolProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
@@ -266,15 +266,15 @@
           </FloatProperty>
         </ThroughputController>
         <hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller : if role = admin">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller : if role = admin" enabled="true">
             <stringProp name="IfController.condition">${__groovy(vars.get(&apos;userRole&apos;) == &apos;admin&apos;)}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : AdminModeration"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : AdminModeration" enabled="true"/>
             <hashTree>
-              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller : TX_AdminModerate">
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller : TX_AdminModerate" enabled="true">
                 <boolProp name="TransactionController.includeTimers">false</boolProp>
               </TransactionController>
               <hashTree>
@@ -313,9 +313,9 @@
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group TEST user" enabled="false">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
-        <intProp name="ThreadGroup.ramp_time">1</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group TEST user">
+        <intProp name="ThreadGroup.num_threads">20</intProp>
+        <intProp name="ThreadGroup.ramp_time">120</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
@@ -324,12 +324,16 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+          <stringProp name="ConstantTimer.delay">1300</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller"/>
         <hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller LOGIN" enabled="true">
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller LOGIN">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="-729011297">Test Plan General</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
               <stringProp name="1241115058">Controllers Library</stringProp>
               <stringProp name="-1382807225">Simple Controller : Common</stringProp>
               <stringProp name="-1773187035">Simple Controller : LoginFlow </stringProp>
@@ -337,24 +341,24 @@
           </ModuleController>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller POST" enabled="true">
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller POST">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="-729011297">Test Plan General</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
               <stringProp name="1241115058">Controllers Library</stringProp>
               <stringProp name="-1382807225">Simple Controller : Common</stringProp>
               <stringProp name="1420584299">Simple Controller : PostMessage</stringProp>
             </collectionProp>
           </ModuleController>
           <hashTree/>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller PATCH" enabled="true">
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller PATCH">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="-729011297">Test Plan General</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
               <stringProp name="1241115058">Controllers Library</stringProp>
               <stringProp name="-1382807225">Simple Controller : Common</stringProp>
               <stringProp name="-1003942233">Simple Controller : EditOwnMessage</stringProp>
@@ -377,13 +381,26 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/PostMessage" enabled="true">
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1241115058">Controllers Library</stringProp>
+              <stringProp name="-1382807225">Simple Controller : Common</stringProp>
+              <stringProp name="-1773187035">Simple Controller : LoginFlow </stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/PostMessage">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-729011297">Test Plan General</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="1241115058">Controllers Library</stringProp>
             <stringProp name="-1382807225">Simple Controller : Common</stringProp>
-            <stringProp name="1420584299">Simple Controller : PostMessage</stringProp>
+            <stringProp name="-1998688080">Simple Controller : ReadFeed</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
@@ -399,12 +416,12 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer">
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
           <intProp name="calcMode">1</intProp>
           <stringProp name="throughput">${__groovy(${TARGET_RPS} as int * 60)}</stringProp>
         </ConstantThroughputTimer>
         <hashTree/>
-        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller"/>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
         <hashTree>
           <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Admin/LoginFlow" enabled="true">
             <collectionProp name="ModuleController.node_path">
@@ -417,7 +434,7 @@
           </ModuleController>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : AdminModeration"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : AdminModeration" enabled="true"/>
         <hashTree>
           <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller : TX_AdminModerate" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
@@ -468,7 +485,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer">
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
           <intProp name="calcMode">1</intProp>
           <stringProp name="throughput">${__groovy(${TARGET_RPS} as int * 60)}</stringProp>
         </ConstantThroughputTimer>
@@ -478,7 +495,7 @@
           <stringProp name="RandomTimer.range">${__Random(${THINK_TIME_MIN},${THINK_TIME_MAX})}</stringProp>
         </UniformRandomTimer>
         <hashTree/>
-        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller"/>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
         <hashTree>
           <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller : Common/LoginFlow" enabled="true">
             <collectionProp name="ModuleController.node_path">
@@ -491,14 +508,14 @@
           </ModuleController>
           <hashTree/>
         </hashTree>
-        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller : 80% Users (Post)">
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller : 80% Users (Post)" enabled="true">
           <intProp name="ThroughputController.style">1</intProp>
           <boolProp name="ThroughputController.perThread">false</boolProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
           <FloatProperty>
             <name>ThroughputController.percentThroughput</name>
             <value>80.0</value>
-            <savedValue>80.0</savedValue>
+            <savedValue>0.0</savedValue>
           </FloatProperty>
           <stringProp name="TestPlan.comments">80%  Users</stringProp>
         </ThroughputController>
@@ -554,7 +571,7 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller : 20% Users (Post + Edit)">
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller : 20% Users (Post + Edit)" enabled="true">
           <intProp name="ThroughputController.style">1</intProp>
           <boolProp name="ThroughputController.perThread">false</boolProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
@@ -598,9 +615,9 @@
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Controllers Library"/>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : Common" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : Common"/>
         <hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : LoginFlow "/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : LoginFlow " enabled="true"/>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : login [POST]" enabled="true">
               <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
@@ -642,7 +659,7 @@
               <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
             </JSONPostProcessor>
             <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor : role">
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor : role" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">role</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.role</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
@@ -825,7 +842,7 @@
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : Admin" enabled="true"/>
         <hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : LoginFlow"/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller : LoginFlow" enabled="true"/>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request : Admin login [POST]" enabled="true">
               <stringProp name="HTTPSampler.path">/api/auth/login</stringProp>
@@ -854,7 +871,7 @@
               <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
             </JSONPostProcessor>
             <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor : role">
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor : role" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">role</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.role</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
