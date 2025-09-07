@@ -47,6 +47,8 @@ services:
       - influxdb
     environment:
       - HOSTNAME=telegraf-chat
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
     volumes:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro   # метрики контейнеров
