@@ -7,9 +7,9 @@ datasources:
     isDefault: true
     url: http://influxdb:8086           # имя сервиса в docker-compose
     database: chat_test_telegraf        # твоя БД
-    user: telegraf
+    user: admin
     secureJsonData:
-      password: telegrafpass
+      password: admin
     jsonData:
       httpMode: POST
       timeInterval: 10s
