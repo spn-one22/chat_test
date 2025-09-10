@@ -4,7 +4,7 @@ providers:
     orgId: 1
     folder: "My Dashboards"          # папка в интерфейсе Grafana
     type: file
-    disableDeletion: false
-    updateIntervalSeconds: 30        # проверять изменения каждые 30 секунд
+    disableDeletion: true
+    updateIntervalSeconds: 30        # проверять изменения каждые 30 сек.
     options:
-      path: /etc/grafana/provisioning/dashboards_json
+      path: /etc/grafana/provisioning/dashboards
