@@ -3,18 +3,25 @@
     <img src="https://img.shields.io/badge/🇬🇧-English%20version-blue?style=for-the-badge">
   </a>
 </p>
- 
 
-![JMeter](https://img.shields.io/badge/Apache-JMeter-red?logo=apache&style=for-the-badge)
+## ⚙️ Технологии проекта
+
+![Apache JMeter](https://img.shields.io/badge/Apache-JMeter-red?logo=apache&style=for-the-badge)
+![InfluxDB](https://img.shields.io/badge/InfluxDB-1.8-blue?style=for-the-badge&logo=influxdb)
+![Telegraf](https://img.shields.io/badge/Telegraf-Agent-gray?style=for-the-badge&logo=influxdb)
+![Grafana](https://img.shields.io/badge/Grafana-Dashboards-orange?style=for-the-badge&logo=grafana)
 ![HTML](https://img.shields.io/badge/HTML-5-orange?logo=html5&style=for-the-badge)
 ![CSS](https://img.shields.io/badge/CSS-3-blue?logo=css3&style=for-the-badge)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript&style=for-the-badge)
-![Node.js](https://img.shields.io/badge/Node.js-20-green?style=for-the-badge&logo=node.js)
 ![MySQL](https://img.shields.io/badge/MySQL-8-orange?style=for-the-badge&logo=mysql)
 ![Docker](https://img.shields.io/badge/Docker-Compose-blue?style=for-the-badge&logo=docker)
-![InfluxDB](https://img.shields.io/badge/InfluxDB-22ADF6?logo=influxdb&logoColor=white&style=for-the-badge)
-![Telegraf](https://img.shields.io/badge/Telegraf-3B4261?logo=influxdb&logoColor=white&style=for-the-badge)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white&style=for-the-badge)
+![Node.js](https://img.shields.io/badge/Node.js-20-green?style=for-the-badge&logo=node.js)
+
+
+
+
+
+
 
 <b>CHAT_TEST</b> - это пробный проект для локального развертывания на Docker для того чтобы протестировать API а также для создания и отработки тест планов по нагрузочному тестированию на JMeter.
 
