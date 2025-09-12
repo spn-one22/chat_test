@@ -12,6 +12,9 @@
 ![Node.js](https://img.shields.io/badge/Node.js-20-green?style=for-the-badge&logo=node.js)
 ![MySQL](https://img.shields.io/badge/MySQL-8-orange?style=for-the-badge&logo=mysql)
 ![Docker](https://img.shields.io/badge/Docker-Compose-blue?style=for-the-badge&logo=docker)
+![InfluxDB](https://img.shields.io/badge/InfluxDB-22ADF6?logo=influxdb&logoColor=white&style=for-the-badge)
+![Telegraf](https://img.shields.io/badge/Telegraf-3B4261?logo=influxdb&logoColor=white&style=for-the-badge)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white&style=for-the-badge)
 
 <b>CHAT_TEST</b> - это пробный проект для локального развертывания на Docker для того чтобы протестировать API а также для создания и отработки тест планов по нагрузочному тестированию на JMeter.
 
