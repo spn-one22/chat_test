@@ -4,7 +4,8 @@
   </a>
 </p>
 
-## ⚙️ Технологии проекта
+## ⚙️ Технологии проекта         
+
 
 ![Apache JMeter](https://img.shields.io/badge/Apache-JMeter-red?logo=apache&style=for-the-badge)
 ![InfluxDB](https://img.shields.io/badge/InfluxDB-1.8-blue?style=for-the-badge&logo=influxdb)
@@ -16,8 +17,8 @@
 ![MySQL](https://img.shields.io/badge/MySQL-8-orange?style=for-the-badge&logo=mysql)
 ![Docker](https://img.shields.io/badge/Docker-Compose-blue?style=for-the-badge&logo=docker)
 ![Node.js](https://img.shields.io/badge/Node.js-20-green?style=for-the-badge&logo=node.js)
-![GitLab CI](https://gitlab.com/spn-one22/test_chat/badges/main/pipeline.svg?token=XXXX)
 
+![GitLab CI](https://gitlab.com/spn-one22/test_chat/badges/main/pipeline.svg?token=XXXX)
 
 
 
@@ -151,4 +152,5 @@ docker compose up -d --build
 ##
 - **DELETE /api/admin/users/:id** — удалить  
 `Authorization: Bearer <JWT>`
+
 
