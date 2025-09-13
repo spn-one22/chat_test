@@ -1,52 +1,104 @@
-stages:
-  - test
-  - build
-  - deploy
+# ===============================
+# GitLab CI/CD конфигурация
+# Для проекта: Node.js + Docker Compose + Telegraf + Grafana + InfluxDB
+# Автоматизация состоит из двух стадий: TEST и BUILD
+# ===============================
 
-# 1. Тестовый шаг: проверим Node.js код
-test-job:
+# --- Определяем порядок стадий ---
+stages:
+  - test     # Сначала проверяем и собираем Node.js часть
+  - build    # Потом собираем Docker контейнеры
+
+# --- Workflow rules ---
+# Эти правила определяют, когда ПАЙПЛАЙН запускается.
+workflow:
+  rules:
+    # Если изменились только .md файлы (документация),
+    # то пайплайн не запускаем, чтобы не тратить ресурсы.
+    - changes:
+        - "**/*.md"
+
+      when: never
+
+    # В остальных случаях всегда запускаем пайплайн
+    - when: always
+
+# ============================================
+# JOB 1: TEST
+# Проверяет Node.js часть приложения (установку зависимостей, сборку)
+# ============================================
+test:
   stage: test
-  image: node:20
+  image: node:20   # GitLab скачает официальный Docker-образ Node.js версии 20
+
+  # --- Кэшируем папку с модулями npm, чтобы ускорить повторные сборки ---
+  cache:
+    key: npm-${CI_COMMIT_REF_SLUG}   # отдельный кэш для каждой ветки
+    paths:
+      - .npm/                         # путь для хранения кэша
+    policy: pull-push                  # сначала подтянуть, потом обновить
+
+  # --- Переменные окружения ---
+  variables:
+    npm_config_cache: .npm             # npm будет класть кэш сюда
+
+  # --- Шаги, которые выполняет job ---
   script:
-    - echo "Устанавливаем зависимости..."
-    - npm install
-    - echo "Проверяем, что проект собирается"
-    - npm run build || echo "Временная проверка — билд пока не обязателен"
+    - node -v && npm -v               # Проверим версии Node.js и npm (для логов)
+    - npm ci || npm install           # Устанавливаем зависимости (ci — чистая установка)
+    - npm run build || echo "build optional"   # Собираем проект, если есть команда build
+
+  # --- Правила, когда запускать этот job ---
   rules:
     - changes:
-        - app/**/*
-        - package.json
-        - package-lock.json
-        - .gitlab-ci.yml
-    - when: never
+        - "app/**/*"                  # если изменились файлы приложения
+        - "package.json"              # или package.json
+        - "package-lock.json"         # или lock-файл зависимостей
+        - ".gitlab-ci.yml"            # или сам pipeline-файл
 
-# 2. Сборка Docker-образов
+# ============================================
+# JOB 2: BUILD
+# Собирает Docker-образы всех сервисов по docker-compose.yml
+# ============================================
 docker-build:
   stage: build
-  image: docker:20.10
+  image: docker:24.0  # GitLab возьмет официальный образ Docker для сборки
+
+  # --- Docker-in-Docker сервис ---
   services:
-    - docker:dind
+    - name: docker:24.0-dind
+      command: ["--mtu=1460"] # Устанавливаем MTU, чтобы избежать проблем с сетью GitLab
+
+  # --- Переменные для корректной работы docker внутри GitLab Runner ---
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""     # отключаем TLS для простоты
+    DOCKER_DRIVER: overlay2
+
+  # --- Шаги сборки Docker контейнеров ---
   script:
-    - echo "Собираем Docker-образы..."
-    - docker compose build
+    - docker version                      # Проверяем, что Docker работает
+    - docker compose version || apk add --no-cache docker-cli-compose  # Проверяем наличие docker compose
+    - docker compose pull || true         # Пытаемся подтянуть уже готовые образы (если есть)
+    - docker compose build --pull         # Собираем новые образы по docker-compose.yml
+
+  # --- Когда запускать job ---
   rules:
     - changes:
-        - Dockerfile
-        - docker-compose.yml
-        - grafana/**/*
-        - telegraf/**/*
-        - app/**/*
+        - "docker-compose.yml"  # если изменился файл с конфигурацией сервисов
+        - "Dockerfile"          # или основной Dockerfile
+        - "app/**/*"            # или код приложения
+        - "grafana/**/*"        # или файлы графаны
+        - "telegraf/**/*"       # или файлы телеграфа
 
-# 3. Деплой на локальный сервер (через SSH)
-deploy-job:
-  stage: deploy
-  image: alpine:3.20
-  before_script:
-    - apk add --no-cache openssh-client
-    - eval "$(ssh-agent -s)"
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-    - mkdir -p ~/.ssh && printf "Host *\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
-  script:
-    - ssh $SSH_USER@$SSH_HOST "cd /path/to/project && git pull && docker compose up -d"
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
+# ============================================
+# ДОПОЛНИТЕЛЬНЫЕ ПРИМЕЧАНИЯ:
+# 1. Этот пайплайн только тестирует и собирает контейнеры.
+#    Автоматического деплоя пока нет.
+#
+# 2. Когда решим делать деплой:
+#    - Либо добавим self-hosted runner, чтобы GitLab мог локально выполнять docker compose up -d
+#    - Либо добавим деплой по SSH на удаленный сервер.
+#
+# 3. Если изменились только .md файлы или документация, пайплайн не запустится.
+# ============================================
