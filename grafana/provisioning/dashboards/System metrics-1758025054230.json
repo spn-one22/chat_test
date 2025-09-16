@@ -18,13 +18,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 4,
   "links": [],
   "panels": [
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "influxdb"
       },
       "fieldConfig": {
         "defaults": {
@@ -156,7 +156,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "influxdb"
       },
       "fieldConfig": {
         "defaults": {
@@ -282,7 +282,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "influxdb"
       },
       "fieldConfig": {
         "defaults": {
@@ -374,7 +374,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "influxdb"
       },
       "fieldConfig": {
         "defaults": {
@@ -390,7 +390,7 @@
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
-            "fillOpacity": 0,
+            "fillOpacity": 24,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -479,5 +479,5 @@
   "timezone": "browser",
   "title": "System metrics",
   "uid": "a3386435-13a6-42dc-9b16-84fa9da42da3",
-  "version": 15
+  "version": 1
 }
