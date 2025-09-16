@@ -85,7 +85,7 @@ services:
       - "3000:3000"      # Веб-интерфейс Grafana
     volumes:
       - grafana_data:/var/lib/grafana
-      - C:\Users\spn_one\Desktop\test_chat\grafana\provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
     depends_on:
       - influxdb
     networks:
