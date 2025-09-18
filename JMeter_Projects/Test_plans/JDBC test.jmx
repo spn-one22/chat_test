@@ -5,6 +5,8 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -17,7 +19,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration">
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
         <boolProp name="autocommit">true</boolProp>
         <stringProp name="checkQuery">SELECT 1;</stringProp>
         <stringProp name="connectionAge">5000</stringProp>
@@ -49,7 +51,7 @@
       <hashTree>
         <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Create jmeter admin" enabled="false"/>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 - hash password">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 - hash password" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -70,7 +72,7 @@ vars.put(&quot;hashedPassword&quot;, hashedPassword)
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223Sampler>
           <hashTree/>
-          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request create admin">
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request create admin" enabled="true">
             <stringProp name="dataSource">dbConn</stringProp>
             <stringProp name="queryType">Update Statement</stringProp>
             <stringProp name="query">INSERT INTO users (login, password, role, createdAt)
@@ -85,11 +87,11 @@ SELECT &quot;jmeter&quot;, &quot;${hashedPassword}&quot;, &quot;admin&quot;, now
           </JDBCSampler>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request take id">
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request take id" enabled="true">
             <stringProp name="dataSource">dbConn</stringProp>
             <stringProp name="queryType">Select Statement</stringProp>
             <stringProp name="query">SELECT id
@@ -104,13 +106,13 @@ WHERE login = &quot;jmeter&quot;;</stringProp>
             <stringProp name="resultSetHandler">Store as String</stringProp>
           </JDBCSampler>
           <hashTree/>
-          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
+          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
             <boolProp name="displayJMeterProperties">false</boolProp>
             <boolProp name="displayJMeterVariables">true</boolProp>
             <boolProp name="displaySystemProperties">false</boolProp>
           </DebugSampler>
           <hashTree/>
-          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request message">
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request message" enabled="true">
             <stringProp name="dataSource">dbConn</stringProp>
             <stringProp name="query">INSERT INTO messages (`text`, createdAt, userId)
 SELECT CONCAT(?, &apos;Text from JMETER&apos;), NOW(), ?</stringProp>
@@ -137,7 +139,7 @@ SELECT CONCAT(?, &apos;Text from JMETER&apos;), NOW(), ?</stringProp>
         </elementProp>
       </PostThreadGroup>
       <hashTree>
-        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration">
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
           <boolProp name="autocommit">true</boolProp>
           <stringProp name="checkQuery">SELECT 1;</stringProp>
           <stringProp name="connectionAge">5000</stringProp>
@@ -163,9 +165,24 @@ SELECT CONCAT(?, &apos;Text from JMETER&apos;), NOW(), ?</stringProp>
 WHERE `text` LIKE ? AND userId = (
 SELECT id
 FROM users
-WHERE login = &apos;jmeter&apos;);</stringProp>
+WHERE login = &apos;jmeter&apos;);
+</stringProp>
           <stringProp name="queryArguments">%${waterMark}%</stringProp>
           <stringProp name="queryArgumentsTypes">VARCHAR</stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request">
+          <stringProp name="dataSource">dbConn</stringProp>
+          <stringProp name="queryType">Update Statement</stringProp>
+          <stringProp name="query">DELETE FROM users
+WHERE login = &quot;jmeter&quot;;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames"></stringProp>
           <stringProp name="resultVariable"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
