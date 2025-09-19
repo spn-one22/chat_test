@@ -7,7 +7,7 @@ datasources:
     type: influxdb
     access: proxy
     url: http://influxdb:8086
-    database: chat_test
+    database: chat_test_jmeter
     user: jmeter_user
     secureJsonData:
       password: jmeter_pass
