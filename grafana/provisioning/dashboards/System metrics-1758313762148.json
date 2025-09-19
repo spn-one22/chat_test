@@ -18,13 +18,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 4,
+  "id": 2,
   "links": [],
   "panels": [
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "influxdb"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -156,7 +156,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "influxdb"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -282,7 +282,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "influxdb"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -374,7 +374,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "influxdb"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {

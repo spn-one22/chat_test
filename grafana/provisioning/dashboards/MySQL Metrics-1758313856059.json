@@ -18,13 +18,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 3,
+  "id": 4,
   "links": [],
   "panels": [
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -117,7 +117,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -213,7 +213,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -305,7 +305,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -397,7 +397,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -490,7 +490,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -583,7 +583,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -675,7 +675,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -767,7 +767,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "fewzw3s0gka2oa"
+        "uid": "telegraf_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -872,5 +872,5 @@
   "timezone": "browser",
   "title": "MySQL Metrics",
   "uid": "d09ffc7e-430a-4a91-a763-44045a1dab2e",
-  "version": 17
+  "version": 1
 }

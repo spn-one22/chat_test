@@ -18,13 +18,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 3,
   "links": [],
   "panels": [
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cex0tm5vr7if4d"
+        "uid": "jmeter_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -107,7 +107,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cex0tm5vr7if4d"
+            "uid": "jmeter_ds"
           },
           "groupBy": [
             {
@@ -159,7 +159,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cex0tm5vr7if4d"
+        "uid": "jmeter_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -245,7 +245,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cex0tm5vr7if4d"
+            "uid": "jmeter_ds"
           },
           "query": "SELECT max(\"pct95.0\") AS P95,  max(\"pct90.0\") AS P90,max(\"pct99.0\") AS P99\nFROM \"jmeter\"\nWHERE $timeFilter\n  AND \"transaction\" = 'HTTP Request'\n  AND \"statut\" = 'all'\nGROUP BY time($__interval) fill(null)",
           "rawQuery": true,
@@ -259,7 +259,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cex0tm5vr7if4d"
+        "uid": "jmeter_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -368,7 +368,7 @@
           "alias": "",
           "datasource": {
             "type": "influxdb",
-            "uid": "cex0tm5vr7if4d"
+            "uid": "jmeter_ds"
           },
           "query": "SELECT sum(\"countError\")\nFROM \"jmeter\"\nWHERE $timeFilter\n  AND \"transaction\" = 'all'\nGROUP BY time($__interval) fill(null)\n",
           "rawQuery": true,
@@ -382,7 +382,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cex0tm5vr7if4d"
+        "uid": "jmeter_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -466,7 +466,7 @@
           "alias": "",
           "datasource": {
             "type": "influxdb",
-            "uid": "cex0tm5vr7if4d"
+            "uid": "jmeter_ds"
           },
           "query": "SELECT mean(\"avg\") AS \"AVG Response Time\"\nFROM \"jmeter\"\nWHERE $timeFilter\n  AND \"transaction\"='HTTP Request'\n  AND \"statut\"='all'\nGROUP BY time($__interval) fill(null)\n",
           "rawQuery": true,
@@ -493,5 +493,5 @@
   "timezone": "browser",
   "title": "JMeter metrics",
   "uid": "c5652cca-dac8-4922-8e61-44abbbca9465",
-  "version": 10
+  "version": 1
 }
