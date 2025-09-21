@@ -125,47 +125,6 @@ WHERE NOT EXISTS (
           <stringProp name="RandomTimer.range">100.0</stringProp>
         </GaussianRandomTimer>
         <hashTree/>
-        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="TX-Create user = jmeter (once only)" enabled="false"/>
-        <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 - hash password" enabled="true">
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="script">import org.mindrot.jbcrypt.BCrypt
-
-// Исходный пароль
-def plainPassword = &quot;${password}&quot;
-
-// Генерация bcrypt
-def hashedPassword = BCrypt.hashpw(plainPassword, BCrypt.gensalt(10))
-
-// Лог для проверки
-log.info(&quot;Hashed password: &quot; + hashedPassword)
-
-// Сохраняем хеш в переменную JMeter
-vars.put(&quot;hashedPassword&quot;, hashedPassword)
-</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223Sampler>
-          <hashTree/>
-          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request create user = jmeter" enabled="true">
-            <stringProp name="dataSource">dbConn</stringProp>
-            <stringProp name="queryType">Update Statement</stringProp>
-            <stringProp name="query">INSERT INTO users (login, `password`, role, createdAt)
-SELECT &quot;${user_name}&quot;, &quot;${hashedPassword}&quot;, &quot;${role}&quot;, now()
-WHERE NOT EXISTS (
-	SELECT 1 FROM users
-	WHERE login = &quot;${user_name}&quot;);</stringProp>
-            <stringProp name="queryArguments"></stringProp>
-            <stringProp name="queryArgumentsTypes"></stringProp>
-            <stringProp name="variableNames"></stringProp>
-            <stringProp name="resultVariable"></stringProp>
-            <stringProp name="queryTimeout"></stringProp>
-            <stringProp name="resultSetMaxRows"></stringProp>
-            <stringProp name="resultSetHandler">Store as String</stringProp>
-          </JDBCSampler>
-          <hashTree/>
-        </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TX-Read Messages" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
