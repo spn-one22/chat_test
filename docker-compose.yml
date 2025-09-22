@@ -88,15 +88,34 @@ services:
       - influxdb
     networks:
       - web
-
-
-# --- Общие тома
+      
+      
+   # --- Prometheus для сбора метрик приложения
+  
+  prometheus:
+    image: prom/prometheus:v2.55.1
+    container_name: CHAT_TEST-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prom_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    depends_on:
+      - app        # имя сервиса приложения
+    networks:
+      - web
+      
+  # --- Общие тома
 volumes:
   mysql_data:
   influxdb_data:
   grafana_data:
+  prom_data:
 
-# --- Общая сеть
+  # --- Общая сеть
 networks:
   web: {}
 
