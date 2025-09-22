@@ -29,3 +29,10 @@ datasources:
     jsonData:
       httpMode: POST
       timeInterval: 10s
+      
+  #---prometheus
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+
