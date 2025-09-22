@@ -6,6 +6,12 @@ import mysql from "mysql2/promise";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// for prometheus
+const client = require('prom-client');
+const register = new client.Registry();
+client.collectDefaultMetrics({ register });
+//
+
 const PORT = process.env.PORT || 8080;
 const JWT_SECRET = process.env.JWT_SECRET || "dev-secret";
 
@@ -263,3 +269,10 @@ app.use("/", express.static(path.join(__dirname, "public")));
 await waitForDb();
 await ensureAdmin();
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
+
+// add endpoint /metrics (for prometheus)
+app.get('/metrics', async (req, res) => {
+  res.set('Content-Type', register.contentType);
+  res.end(await register.metrics());
+});
+//
