@@ -6,10 +6,11 @@ import mysql from "mysql2/promise";
 import path from "path";
 import { fileURLToPath } from "url";
 
-// for prometheus
-const client = require('prom-client');
+// for prometheus (ESM)
+import client from 'prom-client';
 const register = new client.Registry();
 client.collectDefaultMetrics({ register });
+
 //
 
 const PORT = process.env.PORT || 8080;
