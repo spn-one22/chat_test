@@ -7,9 +7,34 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 // for prometheus (ESM)
-import client from 'prom-client';
-const register = new client.Registry();
-client.collectDefaultMetrics({ register });
+import promClient from "prom-client";
+
+// создаём app СРАЗУ
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+// регистр и дефолтные метрики
+const register = new promClient.Registry();
+promClient.collectDefaultMetrics({ register });
+
+// счётчик запросов для RPS
+const httpRequestsTotal = new promClient.Counter({
+  name: "http_requests_total",
+  help: "Total HTTP requests",
+  labelNames: ["method", "route", "status"],
+    registers: [register]
+});
+
+// middleware для инкремента
+app.use((req, res, next) => {
+	  if (req.path === '/metrics') return next();  //не учитывать опрос Prometheus metrics
+  res.on("finish", () => {
+    const route = req.route?.path || req.path || "unknown";
+    httpRequestsTotal.labels(req.method, route, String(res.statusCode)).inc();
+  });
+  next();
+});
 
 //
 
@@ -25,9 +50,6 @@ const DB_NAME = process.env.DB_NAME || "messenger";
 const ADMIN_LOGIN = (process.env.ADMIN_LOGIN || "").trim();
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "";
 
-const app = express();
-app.use(cors());
-app.use(express.json());
 
 const pool = mysql.createPool({
   host: DB_HOST, port: DB_PORT, user: DB_USER, password: DB_PASSWORD, database: DB_NAME,
@@ -262,6 +284,14 @@ app.delete("/api/admin/users/:id", auth, requireAdmin, async (req, res) => {
   res.status(204).end();
 });
 
+
+// add endpoint /metrics (for prometheus)
+app.get('/metrics', async (req, res) => {
+  res.set('Content-Type', register.contentType);
+  res.end(await register.metrics());
+});
+//
+
 // static UI
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -271,9 +301,4 @@ await waitForDb();
 await ensureAdmin();
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
-// add endpoint /metrics (for prometheus)
-app.get('/metrics', async (req, res) => {
-  res.set('Content-Type', register.contentType);
-  res.end(await register.metrics());
-});
-//
+
