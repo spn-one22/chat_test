@@ -7,6 +7,39 @@
       </elementProp>
     </TestPlan>
     <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Accept</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="jwt_tokens_path" elementType="Argument">
+            <stringProp name="Argument.name">jwt_tokens_path</stringProp>
+            <stringProp name="Argument.value">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/MainLoad/CSV/new/jwt_tokens.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="new_users_path" elementType="Argument">
+            <stringProp name="Argument.name">new_users_path</stringProp>
+            <stringProp name="Argument.value">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/MainLoad/CSV/new/new_users.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="new_admins_path" elementType="Argument">
+            <stringProp name="Argument.name">new_admins_path</stringProp>
+            <stringProp name="Argument.value">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/MainLoad/CSV/new/new_admins.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
       <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults">
         <stringProp name="HTTPSampler.domain">localhost</stringProp>
         <stringProp name="HTTPSampler.port">8090</stringProp>
@@ -35,7 +68,7 @@
         <stringProp name="username">appuser</stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group">
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group - Register">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -57,7 +90,17 @@
           </FloatProperty>
         </ThroughputController>
         <hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller"/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1984396385">Library Controller</stringProp>
+              <stringProp name="2024019467">Common</stringProp>
+              <stringProp name="2052552">Auth</stringProp>
+              <stringProp name="-1185989415">Registration</stringProp>
+              <stringProp name="1546310324">TX_Registration</stringProp>
+            </collectionProp>
+          </ModuleController>
           <hashTree/>
         </hashTree>
         <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller 20% Admins">
@@ -76,11 +119,52 @@
               <stringProp name="764597751">Test Plan</stringProp>
               <stringProp name="764597751">Test Plan</stringProp>
               <stringProp name="1984396385">Library Controller</stringProp>
-              <stringProp name="2024019467">Common</stringProp>
+              <stringProp name="63116079">Admin</stringProp>
               <stringProp name="2052552">Auth</stringProp>
               <stringProp name="-1185989415">Registration</stringProp>
+              <stringProp name="1546310324">TX_Registration</stringProp>
             </collectionProp>
           </ModuleController>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group - Login">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller 80%">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>80.0</value>
+            <savedValue>0.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller"/>
+          <hashTree/>
+        </hashTree>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller 20%">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>20.0</value>
+            <savedValue>0.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller"/>
           <hashTree/>
         </hashTree>
       </hashTree>
@@ -116,7 +200,45 @@
                     </collectionProp>
                   </elementProp>
                 </HTTPSamplerProxy>
-                <hashTree/>
+                <hashTree>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="script">vars.put(&apos;written&apos;, &apos;false&apos;)
+</stringProp>
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor new_user_id">
+                    <stringProp name="JSONPostProcessor.referenceNames">new_user_id</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.id</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                    <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor : append new user to file ">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">def id = vars.get(&apos;new_user_id&apos;)
+def ok201 = &apos;201&apos;.equals(prev.getResponseCode())
+def wrote = &apos;true&apos;.equals(vars.get(&apos;written&apos;))
+
+if (ok201 &amp;&amp; id &amp;&amp; id != &apos;NOT_FOUND&apos; &amp;&amp; !wrote) {
+  def line = &quot;${vars.get(&apos;old_user_name&apos;)},${vars.get(&apos;old_user_pass&apos;)},${System.lineSeparator()}&quot;
+  def path = vars.get(&apos;new_users_path&apos;) ?: &apos;../CSV/new/new_users.csv&apos;
+  synchronized (this) {
+    new File(path).parentFile?.mkdirs()
+    new File(path) &lt;&lt; line
+  }
+  vars.put(&apos;written&apos;, &apos;true&apos;)
+}
+</stringProp>
+                  </JSR223PostProcessor>
+                  <hashTree/>
+                </hashTree>
               </hashTree>
             </hashTree>
             <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Login"/>
@@ -125,7 +247,7 @@
                 <boolProp name="TransactionController.includeTimers">false</boolProp>
               </TransactionController>
               <hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /api/auth/login">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /api/auth/login as User">
                   <stringProp name="HTTPSampler.path">/api/auth/login</stringProp>
                   <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
                   <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -145,10 +267,61 @@
                     </collectionProp>
                   </elementProp>
                 </HTTPSamplerProxy>
-                <hashTree/>
+                <hashTree>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">vars.put(&quot;written&quot;, &quot;false&quot;)</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor: jwt">
+                    <stringProp name="JSONPostProcessor.referenceNames">jwt</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.token</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                    <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor :  append jwt token to file">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">
+def ok200 = &apos;200&apos;.equals(prev.getResponseCode())
+def wrote = &apos;true&apos;.equals(vars.get(&apos;written&apos;))
+
+if (ok200 &amp;&amp; id &amp;&amp; id != &apos;NOT_FOUND&apos; &amp;&amp; !wrote) {
+  def line = &quot;${vars.get(&apos;jwt&apos;)}${System.lineSeparator()}&quot;
+  def path = vars.get(&apos;jwt_tokens_path&apos;) ?: &apos;../CSV/new/jwt_tokens.csv&apos;
+  synchronized (this) {
+    new File(path).parentFile?.mkdirs()
+    new File(path) &lt;&lt; line
+  }
+  vars.put(&apos;written&apos;, &apos;true&apos;)
+}
+</stringProp>
+                  </JSR223PostProcessor>
+                  <hashTree/>
+                </hashTree>
               </hashTree>
             </hashTree>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="old_users.csv">
+              <stringProp name="delimiter">,</stringProp>
+              <stringProp name="fileEncoding"></stringProp>
+              <stringProp name="filename">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/MainLoad/CSV/old/old_users_1000.csv</stringProp>
+              <boolProp name="ignoreFirstLine">false</boolProp>
+              <boolProp name="quotedData">false</boolProp>
+              <boolProp name="recycle">true</boolProp>
+              <stringProp name="shareMode">shareMode.all</stringProp>
+              <boolProp name="stopThread">false</boolProp>
+              <stringProp name="variableNames">old_user_name,old_user_pass</stringProp>
+            </CSVDataSet>
+            <hashTree/>
           </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Read Feed"/>
+          <hashTree/>
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Admin"/>
         <hashTree>
@@ -190,7 +363,54 @@ WHERE NOT EXISTS (
                   <stringProp name="resultVariable"></stringProp>
                   <stringProp name="variableNames"></stringProp>
                 </JDBCSampler>
-                <hashTree/>
+                <hashTree>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">vars.put(&apos;written&apos;, &apos;false&apos;)
+</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                  <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="JDBC PostProcessor">
+                    <stringProp name="dataSource">DB_connect</stringProp>
+                    <stringProp name="query">SELECT id 
+FROM users
+ORDER BY id DESC
+LIMIT 1;</stringProp>
+                    <stringProp name="queryArguments"></stringProp>
+                    <stringProp name="queryArgumentsTypes"></stringProp>
+                    <stringProp name="queryTimeout"></stringProp>
+                    <stringProp name="queryType">Select Statement</stringProp>
+                    <stringProp name="resultSetHandler">Store as String</stringProp>
+                    <stringProp name="resultSetMaxRows"></stringProp>
+                    <stringProp name="resultVariable"></stringProp>
+                    <stringProp name="variableNames">new_admin_id</stringProp>
+                  </JDBCPostProcessor>
+                  <hashTree/>
+                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor : append new user to file ">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">def id = vars.get(&apos;new_admin_id&apos;)
+def ok201 = &apos;201&apos;.equals(prev.getResponseCode())
+def wrote = &apos;true&apos;.equals(vars.get(&apos;written&apos;))
+
+if (ok201 &amp;&amp; id &amp;&amp; id != &apos;NOT_FOUND&apos; &amp;&amp; !wrote) {
+  def line = &quot;${vars.get(&apos;old_admin_name&apos;)},${vars.get(&apos;old_admin_pass&apos;)},${System.lineSeparator()}&quot;
+  def path = vars.get(&apos;new_admins_path&apos;) ?: &apos;../CSV/new/new_admins.csv&apos;
+  synchronized (this) {
+    new File(path).parentFile?.mkdirs()
+    new File(path) &lt;&lt; line
+  }
+  vars.put(&apos;written&apos;, &apos;true&apos;)
+}
+</stringProp>
+                  </JSR223PostProcessor>
+                  <hashTree/>
+                </hashTree>
               </hashTree>
             </hashTree>
             <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Login"/>
@@ -199,7 +419,7 @@ WHERE NOT EXISTS (
                 <boolProp name="TransactionController.includeTimers">false</boolProp>
               </TransactionController>
               <hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request POST /api/auth/login as Admin">
                   <stringProp name="HTTPSampler.path">/api/auth/login</stringProp>
                   <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
                   <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -219,36 +439,61 @@ WHERE NOT EXISTS (
                     </collectionProp>
                   </elementProp>
                 </HTTPSamplerProxy>
-                <hashTree/>
+                <hashTree>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">vars.put(&quot;written&quot;, &quot;false&quot;)</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor : jwt">
+                    <stringProp name="JSONPostProcessor.referenceNames">jwt</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.token</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                    <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND;NOT_FOUND</stringProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor :  append jwt token to file">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">
+def ok200 = &apos;200&apos;.equals(prev.getResponseCode())
+def wrote = &apos;true&apos;.equals(vars.get(&apos;written&apos;))
+
+if (ok200 &amp;&amp; id &amp;&amp; id != &apos;NOT_FOUND&apos; &amp;&amp; !wrote) {
+  def line = &quot;${vars.get(&apos;jwt&apos;)}${System.lineSeparator()}&quot;
+  def path = vars.get(&apos;jwt_tokens_path&apos;) ?: &apos;../CSV/new/jwt_tokens.csv&apos;
+  synchronized (this) {
+    new File(path).parentFile?.mkdirs()
+    new File(path) &lt;&lt; line
+  }
+  vars.put(&apos;written&apos;, &apos;true&apos;)
+}
+</stringProp>
+                  </JSR223PostProcessor>
+                  <hashTree/>
+                </hashTree>
               </hashTree>
             </hashTree>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="old_admins.csv">
+              <stringProp name="filename">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/MainLoad/CSV/old/old_admins_1000.csv</stringProp>
+              <stringProp name="fileEncoding"></stringProp>
+              <stringProp name="variableNames">old_admin_name,old_admin_pass</stringProp>
+              <boolProp name="ignoreFirstLine">false</boolProp>
+              <stringProp name="delimiter">,</stringProp>
+              <boolProp name="quotedData">false</boolProp>
+              <boolProp name="recycle">true</boolProp>
+              <boolProp name="stopThread">false</boolProp>
+              <stringProp name="shareMode">shareMode.all</stringProp>
+            </CSVDataSet>
+            <hashTree/>
           </hashTree>
         </hashTree>
       </hashTree>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="old_users.csv">
-        <stringProp name="delimiter">,</stringProp>
-        <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="filename">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/MainLoad/CSV/old/old_users_1000.csv</stringProp>
-        <boolProp name="ignoreFirstLine">false</boolProp>
-        <boolProp name="quotedData">false</boolProp>
-        <boolProp name="recycle">true</boolProp>
-        <stringProp name="shareMode">shareMode.all</stringProp>
-        <boolProp name="stopThread">false</boolProp>
-        <stringProp name="variableNames">old_user_name,old_user_pass</stringProp>
-      </CSVDataSet>
-      <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="old_admins.csv">
-        <stringProp name="filename">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/MainLoad/CSV/old/old_admins_1000.csv</stringProp>
-        <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">old_admin_name,old_admin_pass</stringProp>
-        <boolProp name="ignoreFirstLine">false</boolProp>
-        <stringProp name="delimiter">,</stringProp>
-        <boolProp name="quotedData">false</boolProp>
-        <boolProp name="recycle">true</boolProp>
-        <boolProp name="stopThread">false</boolProp>
-        <stringProp name="shareMode">shareMode.all</stringProp>
-      </CSVDataSet>
-      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
