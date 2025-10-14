@@ -7,6 +7,30 @@
       </elementProp>
     </TestPlan>
     <hashTree>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="user_jwt.csv">
+        <stringProp name="filename">user_jwt_tokens_path</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">user_jwt</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="admin_jwt.csv">
+        <stringProp name="filename">admin_jwt_tokens_path</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">admin_jwt</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
       <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
         <collectionProp name="HeaderManager.headers">
           <elementProp name="" elementType="Header">
@@ -22,9 +46,9 @@
       <hashTree/>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="jwt_tokens_path" elementType="Argument">
-            <stringProp name="Argument.name">jwt_tokens_path</stringProp>
-            <stringProp name="Argument.value">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/MainLoad/CSV/new/jwt_tokens.csv</stringProp>
+          <elementProp name="login, password:" elementType="Argument">
+            <stringProp name="Argument.name">login, password:</stringProp>
+            <stringProp name="Argument.value"></stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="new_users_path" elementType="Argument">
@@ -35,6 +59,21 @@
           <elementProp name="new_admins_path" elementType="Argument">
             <stringProp name="Argument.name">new_admins_path</stringProp>
             <stringProp name="Argument.value">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/MainLoad/CSV/new/new_admins.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="jwt tokens:" elementType="Argument">
+            <stringProp name="Argument.name">jwt tokens:</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="user_jwt_tokens_path" elementType="Argument">
+            <stringProp name="Argument.name">user_jwt_tokens_path</stringProp>
+            <stringProp name="Argument.value">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/MainLoad/CSV/new/user_jwt_tokens.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="admin_jwt_tokens_path" elementType="Argument">
+            <stringProp name="Argument.name">admin_jwt_tokens_path</stringProp>
+            <stringProp name="Argument.value">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/MainLoad/CSV/new/admin_jwt_tokens.csv</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -150,7 +189,17 @@
           </FloatProperty>
         </ThroughputController>
         <hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller"/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1984396385">Library Controller</stringProp>
+              <stringProp name="2024019467">Common</stringProp>
+              <stringProp name="2052552">Auth</stringProp>
+              <stringProp name="73596745">Login</stringProp>
+              <stringProp name="-343508530">TX_Login</stringProp>
+            </collectionProp>
+          </ModuleController>
           <hashTree/>
         </hashTree>
         <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller 20%">
@@ -164,7 +213,17 @@
           </FloatProperty>
         </ThroughputController>
         <hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller"/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1984396385">Library Controller</stringProp>
+              <stringProp name="63116079">Admin</stringProp>
+              <stringProp name="2052552">Auth</stringProp>
+              <stringProp name="73596745">Login</stringProp>
+              <stringProp name="-343508530">TX_Login</stringProp>
+            </collectionProp>
+          </ModuleController>
           <hashTree/>
         </hashTree>
       </hashTree>
@@ -283,7 +342,7 @@ if (ok201 &amp;&amp; id &amp;&amp; id != &apos;NOT_FOUND&apos; &amp;&amp; !wrote
                     <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
                   </JSONPostProcessor>
                   <hashTree/>
-                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor :  append jwt token to file">
+                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor :  append user jwt token to file">
                     <stringProp name="scriptLanguage">groovy</stringProp>
                     <stringProp name="parameters"></stringProp>
                     <stringProp name="filename"></stringProp>
@@ -294,7 +353,7 @@ def wrote = &apos;true&apos;.equals(vars.get(&apos;written&apos;))
 
 if (ok200 &amp;&amp; id &amp;&amp; id != &apos;NOT_FOUND&apos; &amp;&amp; !wrote) {
   def line = &quot;${vars.get(&apos;jwt&apos;)}${System.lineSeparator()}&quot;
-  def path = vars.get(&apos;jwt_tokens_path&apos;) ?: &apos;../CSV/new/jwt_tokens.csv&apos;
+  def path = vars.get(&apos;user_jwt_tokens_path&apos;) ?: &apos;../CSV/new/user_jwt_tokens.csv&apos;
   synchronized (this) {
     new File(path).parentFile?.mkdirs()
     new File(path) &lt;&lt; line
@@ -320,7 +379,75 @@ if (ok200 &amp;&amp; id &amp;&amp; id != &apos;NOT_FOUND&apos; &amp;&amp; !wrote
             </CSVDataSet>
             <hashTree/>
           </hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Read Feed"/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Messages"/>
+          <hashTree>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="messages.csv">
+              <stringProp name="filename">C:/Users/spn_one/Desktop/test_chat/JMeter_Projects/CSV_FILES/messages.csv</stringProp>
+              <stringProp name="fileEncoding"></stringProp>
+              <stringProp name="variableNames"></stringProp>
+              <boolProp name="ignoreFirstLine">false</boolProp>
+              <stringProp name="delimiter">,</stringProp>
+              <boolProp name="quotedData">false</boolProp>
+              <boolProp name="recycle">true</boolProp>
+              <boolProp name="stopThread">false</boolProp>
+              <stringProp name="shareMode">shareMode.all</stringProp>
+            </CSVDataSet>
+            <hashTree/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Read Feed"/>
+            <hashTree>
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TX_Read Feed">
+                <boolProp name="TransactionController.includeTimers">false</boolProp>
+              </TransactionController>
+              <hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET /api/messages">
+                  <stringProp name="HTTPSampler.path">/api/messages</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                </HTTPSamplerProxy>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Post Message"/>
+            <hashTree>
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TX_Post Message">
+                <boolProp name="TransactionController.includeTimers">false</boolProp>
+              </TransactionController>
+              <hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /api/messages">
+                  <stringProp name="HTTPSampler.path">/api/messages</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&#xd;
+	&quot;text&quot;:&quot;${messageText} ${__RandomString(6,abcdef012345)}&quot;&#xd;
+}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                </HTTPSamplerProxy>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${user_jwt}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
           <hashTree/>
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Admin"/>
@@ -455,7 +582,7 @@ if (ok201 &amp;&amp; id &amp;&amp; id != &apos;NOT_FOUND&apos; &amp;&amp; !wrote
                     <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND;NOT_FOUND</stringProp>
                   </JSONPostProcessor>
                   <hashTree/>
-                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor :  append jwt token to file">
+                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor :  append admin  jwt token to file">
                     <stringProp name="scriptLanguage">groovy</stringProp>
                     <stringProp name="parameters"></stringProp>
                     <stringProp name="filename"></stringProp>
@@ -466,7 +593,7 @@ def wrote = &apos;true&apos;.equals(vars.get(&apos;written&apos;))
 
 if (ok200 &amp;&amp; id &amp;&amp; id != &apos;NOT_FOUND&apos; &amp;&amp; !wrote) {
   def line = &quot;${vars.get(&apos;jwt&apos;)}${System.lineSeparator()}&quot;
-  def path = vars.get(&apos;jwt_tokens_path&apos;) ?: &apos;../CSV/new/jwt_tokens.csv&apos;
+  def path = vars.get(&apos;admin_jwt_tokens_path&apos;) ?: &apos;../CSV/new/admin_jwt_tokens.csv&apos;
   synchronized (this) {
     new File(path).parentFile?.mkdirs()
     new File(path) &lt;&lt; line
@@ -490,6 +617,79 @@ if (ok200 &amp;&amp; id &amp;&amp; id != &apos;NOT_FOUND&apos; &amp;&amp; !wrote
               <boolProp name="stopThread">false</boolProp>
               <stringProp name="shareMode">shareMode.all</stringProp>
             </CSVDataSet>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Messages"/>
+          <hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="List Messages"/>
+            <hashTree>
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Read Messages">
+                <boolProp name="TransactionController.includeTimers">false</boolProp>
+              </TransactionController>
+              <hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET /api/messages">
+                  <stringProp name="HTTPSampler.path">/api/messages</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                </HTTPSamplerProxy>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Edit Messages"/>
+            <hashTree>
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TX_Edit Message">
+                <boolProp name="TransactionController.includeTimers">false</boolProp>
+              </TransactionController>
+              <hashTree/>
+            </hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete Messages"/>
+            <hashTree>
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TX_Delete Message">
+                <boolProp name="TransactionController.includeTimers">false</boolProp>
+              </TransactionController>
+              <hashTree/>
+            </hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${admin_jwt}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Users"/>
+          <hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="List Users"/>
+            <hashTree>
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TX_List Users">
+                <boolProp name="TransactionController.includeTimers">false</boolProp>
+              </TransactionController>
+              <hashTree/>
+            </hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Edit Users"/>
+            <hashTree>
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TX_Edit Users">
+                <boolProp name="TransactionController.includeTimers">false</boolProp>
+              </TransactionController>
+              <hashTree/>
+            </hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete Users"/>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${admin_jwt}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
             <hashTree/>
           </hashTree>
         </hashTree>
